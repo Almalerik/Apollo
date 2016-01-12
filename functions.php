@@ -218,7 +218,7 @@ if (! function_exists ( 'apollo_admin_scripts' )) {
 		wp_enqueue_script ( 'apollo-select2-script', get_template_directory_uri () . '/assets/admin/select2/js/select2.full.min.js', array (
 				'jquery'
 		), true );
-
+		
 		// Wp Media
 		wp_enqueue_media ();
 

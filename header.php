@@ -25,6 +25,6 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'apollo' ); ?></a>
 	
-	<?php locate_template( 'template-parts/header/' . apollo_get_option( 'header_template' ), true, true );?>
+	<?php locate_template( 'template-parts/header/' . apollo_get_option( 'header_template' ) . '.php', true, true );?>
 
 	<div id="content" class="site-content">

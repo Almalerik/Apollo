@@ -609,6 +609,10 @@ a {
   background-color: #ffffff;
   margin: 0 auto; }
 
+.container-fluid .apollo-wrapper {
+  max-width: 1170px;
+  margin: 0 auto; }
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

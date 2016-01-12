@@ -18,7 +18,10 @@ function apollo_get_option_defaults() {
 			'container_class' => 'container-fluid',
 			'wrapped_element_max_width' => '1170',
 			
-			'header_template' => 'logo-left.php',
+			'header_template' => 'logo-left',
+			'header_wrapped' => true,
+			'header_bg_color' => '#000000',
+			'header_bg_color_opacity' => '0.3',
 	);
 	return apply_filters ( 'apollo_option_defaults', $defaults );
 }
@@ -40,9 +43,9 @@ function apollo_get_option($key) {
  */
 function apollo_get_header_templates() {
 	$templates = array (
-			'logo-left.php' => esc_html__('Left logo', 'apollo'),
-			'logo-center.php' => esc_html__('Center logo', 'apollo'),
-			'logo-right.php' => esc_html__('Right logo', 'apollo'),
+			'logo-left' => esc_html__('Left logo', 'apollo'),
+			'logo-center' => esc_html__('Center logo', 'apollo'),
+			'logo-right' => esc_html__('Right logo', 'apollo'),
 	);
 	return apply_filters ( 'apollo_header_templates', $templates );
 }

@@ -7,7 +7,7 @@ include('main-settings.php');
 	
 
 /*
- * ============== General settings ==============
+ * ============== Header settings ==============
  */
 include('header.php');
 

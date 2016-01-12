@@ -19,9 +19,19 @@ function apollo_sanitize_container($value) {
 /**
  * Sanitize callback for integer
  *
- * @param mixed $value
+ * @param mixed $value        	
  * @return int
  */
 function apollo_sanitize_int($value) {
 	return absint ( $value );
+}
+
+/**
+ * Sanitize callback for css opacity value
+ *
+ * @param string $value        	
+ * @return string
+ */
+function octopus_sanitize_opacity($value) {
+	return floatval ( $value );
 }

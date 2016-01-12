@@ -3,7 +3,7 @@
 
 	<nav id="site-navigation" class="navbar navbar-default apollo-navbar-default" role="navigation">
 
-		<div class="apollo-navbar-wrapper">
+		<div class="apollo-navbar-wrapper <?php echo apollo_get_option('header_wrapped') ? 'apollo-wrapper' : ''?>">
 
 			<div class="navbar-header">
 
@@ -45,7 +45,8 @@
 
 			</div>
 			<!-- #navbar-header -->
-
+			
+			<div class="clearfix"></div>
 		</div>
 		<!-- #apollo-navbar-wrapper -->
 
