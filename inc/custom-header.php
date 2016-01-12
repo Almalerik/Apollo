@@ -16,10 +16,31 @@
  */
 
 /**
+ * Enqueues front-end CSS for colors schema.
+ *
+ * @since Apollo 1.0.0
+ */
+function apollo_css_custom_colors() {
+
+	$css = '';
+	$css .= apollo_generate_css( '#page', 'background-color', 'page_bg_color', '', '', false);
+	$css .= apollo_generate_css( '.container-fluid .apollo-wrapper', 'max-width', 'wrapped_element_max_width', '', 'px', false);
+
+	if ($css) {
+		echo '<style type="text/css" id="apollo-custom-style" />' . "\n";
+		echo $css;
+		echo '</style>' . "\n";
+	}
+}
+add_action('wp_head', 'apollo_css_custom_colors', 100);
+
+
+/**
  * Set up the WordPress core custom header feature.
  *
  * @uses apollo_header_style()
  */
+/*
 function apollo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'apollo_custom_header_args', array(
 		'default-image'          => '',
@@ -31,6 +52,7 @@ function apollo_custom_header_setup() {
 	) ) );
 }
 add_action( 'after_setup_theme', 'apollo_custom_header_setup' );
+*/
 
 if ( ! function_exists( 'apollo_header_style' ) ) :
 /**

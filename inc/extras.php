@@ -27,3 +27,37 @@ function apollo_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'apollo_body_classes' );
+
+/**
+ * This will generate a line of CSS for use in header output.
+ * If the setting (apollo_get_option()) has no defined value or value is equal to default (apollo_get_option_defaults()), the CSS will not be output.
+ *
+ * @uses get_theme_mod()
+ * @param string $selector
+ *        	CSS selector
+ * @param string $style
+ *        	The name of the CSS *property* to modify
+ * @param string $mod_name
+ *        	The name of the 'theme_mod' option to fetch
+ * @param string $prefix
+ *        	Optional. Anything that needs to be output before the CSS property
+ * @param string $postfix
+ *        	Optional. Anything that needs to be output after the CSS property
+ * @param bool $echo
+ *        	Optional. Whether to print directly to the page (default: TRUE).
+ * @return string Returns a single line of CSS with selectors and a property.
+ */
+function apollo_generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true) {
+	$return = '';
+	$mod = apollo_get_option ( $mod_name );
+	$default = apollo_get_option_defaults () [$mod_name];
+
+	if ($mod != '' && $mod !== $default) {
+		$return = sprintf ( "%s { %s:%s; }\n", $selector, $style, $prefix . $mod . $postfix );
+		if ($echo) {
+			echo $return;
+		}
+	}
+
+	return $return;
+}
