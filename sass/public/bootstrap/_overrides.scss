@@ -1,1 +1,68 @@
-@import "overrides";
+.navbar-default {
+	border-radius: 0;
+	border: 0;
+	margin-bottom: 0;
+	background-color: $color__header-background;
+	
+	.navbar-toggle {
+		border: none;
+		background: transparent !important;
+		box-shadow: none;
+		margin-right: 0;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			background: transparent	!important;
+			box-shadow: none;
+		}
+	
+		.icon-bar {
+			width: 22px;
+			transition: all 0.2s;
+		}
+	
+		.top-bar {
+			transform: rotate(45deg);
+			transform-origin: 10% 10%;
+		}
+	
+		.middle-bar {
+			opacity: 0;
+		}
+	
+		.bottom-bar {
+			transform: rotate(-45deg);
+			transform-origin: 10% 90%;
+		}
+	
+		&.collapsed { 
+			
+			.top-bar { 
+				transform:rotate(0);
+			}
+	
+			.middle-bar {
+				opacity: 1;
+			}
+	
+			.bottom-bar {
+				transform: rotate(0);
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-default {
+		#navbar {
+		    position: absolute;
+		    right: 0px;
+		    bottom: 0px;
+		}
+		
+		.apollo-toggle-icon {
+			display: none;
+		}
+	}
+}

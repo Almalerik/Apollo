@@ -41,8 +41,21 @@
 	});
     });
 
+    // Header position
+    wp.customize('header_position', function ( value ) {
+	value.bind(function ( to ) {
+	    if ('' === to) {
+		$('.apollo-header-sticky-top').apolloSticky('destroy');
+		$('.site-header').removeClass('apollo-header-sticky-top');
+	    } else {
+		$('.site-header').addClass(to);
+		$('.apollo-header-sticky-top').apolloSticky();
+	    }
+	});
+    });
+
     // customizer settings that use head custom css
-    var customizerSettings = [ 'page_bg_color', 'wrapped_element_max_width' ];
+    var customizerSettings = [ 'page_bg_color', 'wrapped_element_max_width', 'header_bg_color', 'header_bg_color_opacity', 'header_bg_color_opacity_onscroll', 'header_title_color', 'header_description_color', ];
     var i;
     for (i = 0; i < customizerSettings.length; ++i) {
 	wp.customize(customizerSettings[i], function ( value ) {
@@ -64,10 +77,58 @@
  */
 function updateCustomCss ( wp, $customCss ) {
     var css = '';
-    css += '#page {background-color: ' + wp.customize('page_bg_color').get() + ';}';
+    css += "#page {background-color: " + wp.customize('page_bg_color').get() + ";}\n";
 
     var sanitazedValue = (isNaN(wp.customize('wrapped_element_max_width').get())) ? 1170 : parseInt(wp.customize('wrapped_element_max_width').get());
-    css += '.container-fluid .apollo-wrapper {max-width: ' + sanitazedValue + 'px;}';
+    css += ".container-fluid .apollo-wrapper {max-width: " + sanitazedValue + "px;}\n";
+
+    // Header background color
+    var color = wp.customize('header_bg_color').get();
+    var opacity = wp.customize('header_bg_color_opacity').get();
+    var opacity_on_scroll = wp.customize('header_bg_color_opacity_onscroll').get();
+    console.log("opacity: " + opacity);
+    console.log("tgba: " + hexToRgba(color, opacity, true));
+    css += ".navbar-default {background-color: " + hexToRgba(color, opacity, true) + ";}\n";
+    css += ".apollo-scrolling .apollo-header-sticky-top .navbar-default {background-color: " + hexToRgba(color, opacity_on_scroll, true) + ";}\n";
+    
+    css += ".site-title a, .site-title a:hover, .site-title a:active, .site-title a:visited, .site-title a:focus {color: " + wp.customize('header_title_color').get() + ";}\n";
+    css += ".site-description {color: " + wp.customize('header_description_color').get() + ";}\n";
 
     $customCss.html(css);
+}
+
+/**
+ * This function convert an hex color value to rgba value
+ * 
+ * @param hex
+ * @param opacity
+ *                From 0 to 1; if null or empty, vlue 1 is used
+ * @param css
+ *                if true, return a rgba string else return an array with all
+ *                values
+ * @returns
+ */
+function hexToRgba ( hex, opacity, css ) {
+    opacity = ( opacity  === '' || opacity  === null ) ? 1 : opacity;
+    var parsing = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    var result = parsing ? {
+	r : parseInt(parsing[1], 16),
+	g : parseInt(parsing[2], 16),
+	b : parseInt(parsing[3], 16),
+	o : opacity
+    } : {
+	r : 0,
+	g : 0,
+	b : 0,
+	o : 0
+    };
+    if (css) {
+	var array_values = new Array();
+	for ( var key in result) {
+	    array_values.push(result[key]);
+	}
+	return 'rgba(' + array_values.join(", ") + ')';
+    } else {
+	return result;
+    }
 }

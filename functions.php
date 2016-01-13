@@ -273,3 +273,9 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory () . '/inc/CMB2/init.php';
 
+/**
+ * Load Custom Nav
+ */
+// TODO: MEGAMENU
+require get_template_directory () . '/inc/nav/nav.php';
+

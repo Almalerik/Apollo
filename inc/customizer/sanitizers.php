@@ -32,6 +32,6 @@ function apollo_sanitize_int($value) {
  * @param string $value        	
  * @return string
  */
-function octopus_sanitize_opacity($value) {
+function apollo_sanitize_opacity($value) {
 	return floatval ( $value );
 }
