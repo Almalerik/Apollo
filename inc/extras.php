@@ -25,6 +25,11 @@ function apollo_body_classes($classes) {
 		$classes [] = 'hfeed';
 	}
 	
+	// Adds a class if primary menu must be fix if override logo.
+	if ( apollo_get_option ( 'header_menu_fix' )) {
+		$classes [] = 'apollo-menu-fix';
+	}
+	
 	return $classes;
 }
 add_filter ( 'body_class', 'apollo_body_classes' );

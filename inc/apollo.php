@@ -21,6 +21,7 @@ function apollo_get_option_defaults() {
 			'header_template' => 'logo-left',
 			'header_wrapped' => true,
 			'header_position' => 'apollo-header-sticky-top',
+			'header_menu_fix' => true,
 			'header_bg_color' => '#ffffff',
 			'header_bg_color_opacity' => '1',
 			'header_bg_color_opacity_onscroll' => '1',

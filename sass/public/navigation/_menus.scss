@@ -1,3 +1,49 @@
+@media (min-width: 768px) {
+	.navbar-default {
+		.navbar-nav > li {
+			border-bottom: 3px solid #fff;
+			
+			&:hover {
+				border-color: $color_nav-hover;
+			}
+			
+			&.active {
+				border-color: $color_nav-active;
+			}
+		}
+		
+		.apollo-toggle-icon {
+			display: none;
+		}
+	}
+	
+	.apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu {
+		.navbar-header {
+			float: none;
+			.site-branding {
+				text-align: center;
+				display: block;
+				.site-title-wrapper {
+					text-align: left;
+				}
+			}
+		}
+		.apollo-navbar-nav {
+			width: 100%;
+			display: block;
+			text-align: center;
+			position: relative;
+			right: 0;
+			> li {
+				float: none;
+    			display: inline-block;
+			}
+		}
+	}
+	
+}
+
+
 .main-navigation {
 	clear: both;
 	display: block;

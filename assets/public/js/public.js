@@ -12,8 +12,9 @@ jQuery.noConflict()(function ( $ ) {
 	    jQuery('#primary-menu > li', $(this)).each(function () {
 		menuWidth += $(this).outerWidth(true);
 	    });
-	    menuWidth += parseInt(jQuery('#navbar').css('padding-left')) + parseInt(jQuery('#navbar').css('padding-right'));
-	    if ((mastheadWidth - 35) < (sitebrandingWidth + menuWidth)) {
+	    //jQuery('#navbar', $(this)).outerWidth(true);
+	    //menuWidth += parseInt(jQuery('#navbar').css('padding-left')) + parseInt(jQuery('#navbar').css('padding-right'));
+	    if ((mastheadWidth - 15) < (sitebrandingWidth + menuWidth)) {
 		$(this).addClass('apollo-fix-long-menu');
 	    } else {
 		$(this).removeClass('apollo-fix-long-menu');
@@ -44,6 +45,13 @@ jQuery.noConflict()(function ( $ ) {
     $(document).ready(function () {
 	// Sticky Header
 	$('.apollo-header-sticky-top').apolloSticky();
+	// Fix primary long menu
+	$('.apollo-menu-fix .apollo-navbar-wrapper').apolloFixLongPrimaryMenu();
+	
+	// This is necessary if user refresh page when not top
+	if ($(window).scrollTop() >= 50) {
+		$("#page").addClass("apollo-scrolling");
+	}
 	
 	// Scrolling class
 	$(window).scroll(function() {
@@ -54,9 +62,11 @@ jQuery.noConflict()(function ( $ ) {
 			$("#page").removeClass("apollo-scrolling");
 		}
 	});
-	// This is necessary if user refresh page when not top
-	if ($(window).scrollTop() >= 50) {
-		$("#page").addClass("apollo-scrolling");
-	}
+	
+	// Resizing fix
+	$(window).resize(function() {
+	    $('.apollo-menu-fix .apollo-navbar-wrapper').apolloFixLongPrimaryMenu();
+	});
+
     });
 });

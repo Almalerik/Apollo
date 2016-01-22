@@ -54,6 +54,20 @@
 	});
     });
 
+    // Header primary menu fix
+    wp.customize('header_menu_fix', function ( value ) {
+	value.bind(function ( to ) {
+	    if (to) {
+		console.log('true');
+		$('body').addClass('apollo-menu-fix');
+		$('.apollo-menu-fix .apollo-navbar-wrapper').apolloFixLongPrimaryMenu();
+	    } else {
+		console.log('f');
+		$('body').removeClass('apollo-menu-fix');
+	    }
+	});
+    });
+    
     // customizer settings that use head custom css
     var customizerSettings = [ 'page_bg_color', 'wrapped_element_max_width', 'header_bg_color', 'header_bg_color_opacity', 'header_bg_color_opacity_onscroll', 'header_title_color', 'header_description_color', ];
     var i;

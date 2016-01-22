@@ -277,5 +277,5 @@ require get_template_directory () . '/inc/CMB2/init.php';
  * Load Custom Nav
  */
 // TODO: MEGAMENU
-require get_template_directory () . '/inc/nav/nav.php';
-
+//require get_template_directory () . '/inc/nav/nav.php';
+require get_template_directory () . '/inc/nav/wp_bootstrap_navwalker.php';

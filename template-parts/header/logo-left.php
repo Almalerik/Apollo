@@ -45,22 +45,24 @@
 			</div>
 			<!-- #navbar-header -->
 			
-			<div id="navbar" class="navbar-collapse collapse" role="navigation" aria-label="<?php esc_html_e( 'Primary Menu', 'apollo' );?>" aria-expanded="false">
 				<?php 
 					if ( has_nav_menu( 'primary' ) ) :
-						wp_nav_menu( array( 
+						wp_nav_menu( array(
 							'theme_location' 	=> 'primary', 
 							'menu_id' 			=> 'primary-menu',
-							'container' 		=> false,
-							'items_wrap' 		=> '<ul id="%1$s" class="nav navbar-nav apollo-navbar-nav" role="menubar">%3$s</ul>',
-							'fallback_cb'		=> 'wp_bootstrap_navwalker::fallback',
-							'walker' 			=> new Apollo_Walker()
+							'container'         => 'div',
+							'container_id'      => 'navbar',
+							'container_class'   => 'collapse navbar-collapse',
+							'depth'             => 12,
+							'menu_class'        => 'nav navbar-nav apollo-navbar-nav',
+							'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+							'walker'            => new wp_bootstrap_navwalker()
 						) );
 					else:
 						locate_template( 'template-parts/examples/nav-primary.php', true );
 					endif;
 				?>
-			</div>
+
 			
 			<div class="clearfix"></div>
 		</div>

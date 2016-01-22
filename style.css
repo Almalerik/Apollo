@@ -278,6 +278,32 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+@media (min-width: 768px) {
+  .navbar-default .navbar-nav > li {
+    border-bottom: 3px solid #fff; }
+    .navbar-default .navbar-nav > li:hover {
+      border-color: #DDDDDD; }
+    .navbar-default .navbar-nav > li.active {
+      border-color: #FF4136; }
+  .navbar-default .apollo-toggle-icon {
+    display: none; }
+
+  .apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu .navbar-header {
+    float: none; }
+    .apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu .navbar-header .site-branding {
+      text-align: center;
+      display: block; }
+      .apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu .navbar-header .site-branding .site-title-wrapper {
+        text-align: left; }
+  .apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu .apollo-navbar-nav {
+    width: 100%;
+    display: block;
+    text-align: center;
+    position: relative;
+    right: 0; }
+    .apollo-menu-fix .apollo-navbar-default .apollo-navbar-wrapper.apollo-fix-long-menu .apollo-navbar-nav > li {
+      float: none;
+      display: inline-block; } }
 .main-navigation {
   clear: both;
   display: block;
@@ -437,28 +463,31 @@ a {
   margin: 0 auto; }
 
 .container-fluid .apollo-wrapper {
+  width: 100%;
   max-width: 1170px;
   margin: 0 auto; }
 
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.apollo-navbar-default .site-branding {
-  display: inline-block; }
-  .apollo-navbar-default .site-branding .site-logo-wrapper,
-  .apollo-navbar-default .site-branding .site-title-wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px; }
-.apollo-navbar-default .site-title {
-  margin: 0.2em 0; }
-  .apollo-navbar-default .site-title a {
-    color: #111111; }
-    .apollo-navbar-default .site-title a:hover, .apollo-navbar-default .site-title a:active, .apollo-navbar-default .site-title a:visited, .apollo-navbar-default .site-title a:focus {
-      color: #111111;
-      text-decoration: none; }
-.apollo-navbar-default .site-description {
-  color: #777777; }
+.apollo-navbar-default .apollo-navbar-wrapper {
+  position: relative; }
+  .apollo-navbar-default .apollo-navbar-wrapper .site-branding {
+    display: inline-block; }
+    .apollo-navbar-default .apollo-navbar-wrapper .site-branding .site-logo-wrapper,
+    .apollo-navbar-default .apollo-navbar-wrapper .site-branding .site-title-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px; }
+  .apollo-navbar-default .apollo-navbar-wrapper .site-title {
+    margin: 0.2em 0; }
+    .apollo-navbar-default .apollo-navbar-wrapper .site-title a {
+      color: #111111; }
+      .apollo-navbar-default .apollo-navbar-wrapper .site-title a:hover, .apollo-navbar-default .apollo-navbar-wrapper .site-title a:active, .apollo-navbar-default .apollo-navbar-wrapper .site-title a:visited, .apollo-navbar-default .apollo-navbar-wrapper .site-title a:focus {
+        color: #111111;
+        text-decoration: none; }
+  .apollo-navbar-default .apollo-navbar-wrapper .site-description {
+    color: #777777; }
 
 .apollo-header-sticky-top .apollo-navbar-default {
   -webkit-transition: background-color 500ms linear;
@@ -621,11 +650,9 @@ object {
       transform: rotate(0); }
 
 @media (min-width: 768px) {
-  .navbar-default #navbar {
+  header .apollo-navbar-nav {
     position: absolute;
-    right: 0px;
-    bottom: 0px; }
-  .navbar-default .apollo-toggle-icon {
-    display: none; } }
+    right: 15px;
+    bottom: 0; } }
 
 /*# sourceMappingURL=style.css.map */

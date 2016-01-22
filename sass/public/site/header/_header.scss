@@ -1,33 +1,37 @@
 .apollo-navbar-default {
-	.site-branding {
-		display: inline-block;
+	.apollo-navbar-wrapper {
+		position: relative;
 		
-		.site-logo-wrapper,
-		.site-title-wrapper {
+		.site-branding {
 			display: inline-block;
-			vertical-align: middle;
-	    	margin-right: 10px;
-		}
-	}
-	
-	.site-title { 
-		margin: 0.2em 0;
-		
-		a {
-			color: $color__text-main;
-		    	
-			&:hover,
-			&:active,
-			&:visited,
-			&:focus {
-				color: $color__text-main;
-				text-decoration: none;
+			
+			.site-logo-wrapper,
+			.site-title-wrapper {
+				display: inline-block;
+				vertical-align: middle;
+		    	margin-right: 10px;
 			}
 		}
-	}
-
-	.site-description {
-		color: $color__text-muted;
+		
+		.site-title { 
+			margin: 0.2em 0;
+			
+			a {
+				color: $color__text-main;
+			    	
+				&:hover,
+				&:active,
+				&:visited,
+				&:focus {
+					color: $color__text-main;
+					text-decoration: none;
+				}
+			}
+		}
+	
+		.site-description {
+			color: $color__text-muted;
+		}
 	}
 }
 

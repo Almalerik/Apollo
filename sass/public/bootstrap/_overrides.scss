@@ -54,15 +54,11 @@
 }
 
 @media (min-width: 768px) {
-	.navbar-default {
-		#navbar {
+	header {
+		.apollo-navbar-nav {
 		    position: absolute;
-		    right: 0px;
-		    bottom: 0px;
-		}
-		
-		.apollo-toggle-icon {
-			display: none;
+		    right: 15px;
+		    bottom: 0;
 		}
 	}
 }

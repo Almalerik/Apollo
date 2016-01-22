@@ -1,10 +1,38 @@
+$color__aqua:  #7FDBFF;
+$color__blue:  #0074D9;
+$color__navy:  #001F3F;
+$color__teal:  #39CCCC;
+$color__green: #2ECC40;
+$color__olive: #3D9970;
+$color__lime:  #01FF70;
+
+$color__yellow:  #FFDC00;
+$color__orange:  #FF851B;
+$color__red:     #FF4136;
+$color__fuchsia: #F012BE;
+$color__purple:  #B10DC9;
+$color__maroon:  #85144B;
+
+$color__white:  #FFFFFF;
+$color__silver: #DDDDDD;
+$color__gray:   #AAAAAA;
+$color__black:  #111111;
+
 $color__background-body: #ffffff;
 $color__background-page: #ffffff;
 
+
 $color__header-background: rgba( 255, 255, 255, 1 );
 
-$color__text-main: #111111;
+$color__text-main: $color__black;
 $color__text-muted: #777777;
+
+
+$color_nav-active: $color__red;
+$color_nav-hover: $color__silver;
+
+
+
 
 
 $color__background-screen: #f1f1f1;
@@ -26,3 +54,6 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+
+
